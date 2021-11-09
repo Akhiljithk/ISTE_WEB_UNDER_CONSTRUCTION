@@ -1,0 +1,28 @@
+body{
+	background-image: url("a1.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+h1{
+	font-family: 'Mochiy Pop One', sans-serif;
+	color: white;
+	margin-top: 200px;
+	font-size: 5em;
+}
+h2{
+	font-family: 'Mochiy Pop One', sans-serif;
+	color: white;
+	font-size: 2em;
+}
+img{
+	width: 80px;
+	height: 80px;
+	margin-left: 46%;
+	margin-top: 10px;
+}
+p{
+	font-family: 'arial', sans-serif;
+	color: white;
+	font-size: 1em;
+	margin-left: 46%;
+}

@@ -239,7 +239,6 @@ a {
   font-size: 25px;
   font-weight: 700;
   text-shadow: 1px 2px 0px var(--primary-color);
-  margin-right: 19px;
 }
 .headingdropbtn:hover {
   color: white;
@@ -1267,6 +1266,7 @@ select:focus {
   height: 100%;
   border: none;
 }
+
 
 
 

@@ -45,7 +45,7 @@
 			style="background: rgba(0, 3, 34, 0); border-radius: 1rem; backdrop-filter: blur(20px);">
 			<div class="d-flex flex-wrap justify-content-center align-items-center" style="margin-left: 1rem;">
 				<img src="assets/img/ISTE logo White.png" style="width: 70px; height: auto;">
-				<a href="" class="headingdropbtn" style="margin-left: 1rem;">ISTE GECBH</a>
+				<a href="" class="headingdropbtn" style="margin-left: 1rem; margin-right: 1rem;">ISTE GECBH</a>
 			</div>
 		</div>
 	</div>
@@ -69,6 +69,7 @@
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam temporibus minus voluptate? Sit impedit, tempora odit corrupti, magnam adipisci amet ipsum voluptate nesciunt accusantium dolorum ducimus reprehenderit veritatis maxime ex.
 									</div>
 							</div -->
+							<p style="font-size: 1.3em">All field are Mandatory</p>
               				<label class="mb-2 ml-2" for="name">Full Name</label><br>
               				<input type="text" id="name" name="Name" placeholder="Your name" required>
               				<label class="mb-2 ml-2" for="">Date of Birth</label><br>
@@ -127,9 +128,14 @@
                         	<label class="mb-2 ml-2" for="">Payment Receipt</label><br> -->
 
 
+                        	<div class="d-flex justify-content-center">
+                        	<div id="process" class="spinner-border" role="status" style="display: none;width: 2rem;">
+ 								 <span class="visually-hidden">Loading...</span>
+							</div>
+							</div>
+							<a href="https://docs.google.com/forms/d/e/1FAIpQLSfK2pnd1Na6o9UV79vrTXlRwgLMmoTtNtPwRSovZ-HOLV7NJQ/viewform" style="color:rgba(255, 0, 0, 0.692); font-size: 1em; padding: 0;">If above section is unavailable,click here to register</a>
 
-
-  							<h4 id="successtext"></h4>
+  							<h4 id="successtext">Please Upload Files before submit</h4>
 
   						</div>
   							<input type="submit" value="Submit" class="theme-btn gradient mt-3" style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;" >
@@ -172,14 +178,28 @@
 			document.getElementById("PhonePeqr2").style.display="none";
 		}
 
+
+
+		function a()
+		{
+			document.getElementById("process").style.display="block";
+			document.getElementById("successtext").innerHTML="Submitting form...Please dont panic if stuck!!";
+		}
+		document.getElementById("reg-form").addEventListener('submit',a);
+
+
+
 		$("#reg-form").submit((e)=>{
-            e.preventDefault()
+            e.preventDefault();
             $.ajax({
                 url:"https://script.google.com/macros/s/AKfycbzKov_YxURH5KUMQTJjD2hMRSMzk_il5QuAZR_hCA/exec",
                 data:$("#reg-form").serialize(),
                 method:"POST",
                 success:function (response){
+                	document.getElementById("process").style.display="none";
                 	document.getElementById("successtext").innerHTML="Form submitted Successfully!";
+                	document.getElementById("reg-form").innerHTML="<h4 id='successtextfinal' style='color:white;size:3rem;'>Form submitted Successfully!</h4>";
+
 
                 },
                 error:function (err){
